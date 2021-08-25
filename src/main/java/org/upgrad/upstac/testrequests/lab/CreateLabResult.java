@@ -19,3 +19,4 @@ public class CreateLabResult {
     @NotNull
     private TestStatus result;
 }
+

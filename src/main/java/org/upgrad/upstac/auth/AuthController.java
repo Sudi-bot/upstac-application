@@ -54,10 +54,9 @@ public class AuthController {
             );
 
 
-            if(userService.isApprovedUser( loginRequest.getUserName()) == false){
+            if (userService.isApprovedUser(loginRequest.getUserName()) == false) {
                 throw new AppException("User Not Approved");
             }
-
 
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -71,7 +70,7 @@ public class AuthController {
 
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN, e.getMessage(), e);
-        }catch (AuthenticationException e) {
+        } catch (AuthenticationException e) {
             e.printStackTrace();
             log.info("AuthenticationException" + e.getMessage());
             throw new ResponseStatusException(

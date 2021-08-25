@@ -97,9 +97,9 @@ public class User {
         return doesUserHasRole("TESTER");
     }
 
-    public Integer getAge(){
+    public Integer getAge() {
 
-        if(null != dateOfBirth)
+        if (null != dateOfBirth)
             return LocalDate.now().getYear() - dateOfBirth.getYear();
         else
             return 0;

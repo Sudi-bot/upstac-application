@@ -18,7 +18,6 @@ public class MyMultiPartFile implements MultipartFile {
     private final byte[] content;
 
 
-
     public MyMultiPartFile(String name, InputStream contentStream) throws IOException {
         this(name, name, "image/png", (byte[]) FileCopyUtils.copyToByteArray(contentStream));
     }
@@ -49,7 +48,7 @@ public class MyMultiPartFile implements MultipartFile {
     }
 
     public long getSize() {
-        return (long)this.content.length;
+        return (long) this.content.length;
     }
 
     public byte[] getBytes() throws IOException {
