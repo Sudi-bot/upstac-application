@@ -17,10 +17,12 @@ public class TestRequestService {
     private TestRequestRepository testRequestRepository;
 
 
+
     private static Logger logger = LoggerFactory.getLogger(TestRequestService.class);
 
 
-    public TestRequest createTestRequestFrom(User user, CreateTestRequest createTestRequest) {
+
+    public TestRequest createTestRequestFrom(User user,CreateTestRequest createTestRequest) {
 
         validateExistingRequestsNotPresentWithSameDetails(createTestRequest);
 
@@ -51,12 +53,12 @@ public class TestRequestService {
         }
     }
 
-    public List<TestRequest> findByStatus(RequestStatus requestStatus) {
+    public List<TestRequest> findByStatus(RequestStatus requestStatus){
 
         return testRequestRepository.findByStatus(requestStatus);
     }
 
-    public List<TestRequest> getHistoryFor(User loggedInUser) {
+    public List<TestRequest> getHistoryFor(User loggedInUser){
 
         return testRequestRepository.findByCreatedBy(loggedInUser);
     }

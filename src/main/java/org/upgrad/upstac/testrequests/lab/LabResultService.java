@@ -24,6 +24,7 @@ public class LabResultService {
     private static Logger logger = LoggerFactory.getLogger(LabResultService.class);
 
 
+
     private LabResult createLabResult(User tester, TestRequest testRequest) {
         LabResult labResult = new LabResult();
         labResult.setTester(tester);
@@ -37,6 +38,7 @@ public class LabResultService {
     }
 
 
+
     public LabResult assignForLabTest(TestRequest testRequest, User tester) {
 
         return createLabResult(tester, testRequest);
@@ -47,7 +49,7 @@ public class LabResultService {
 
     public LabResult updateLabTest(TestRequest testRequest, CreateLabResult createLabResult) {
 
-        LabResult labResult = labResultRepository.findByRequest(testRequest).orElseThrow(() -> new AppException("Invalid Request"));
+        LabResult labResult = labResultRepository.findByRequest(testRequest).orElseThrow(()-> new AppException("Invalid Request"));
 
         labResult.setBloodPressure(createLabResult.getBloodPressure());
         labResult.setComments(createLabResult.getComments());

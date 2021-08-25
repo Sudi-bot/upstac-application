@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 public class CreateTestRequest {
 
 
+
     private String name;
     private Gender gender;
     private String address;
@@ -21,6 +22,8 @@ public class CreateTestRequest {
 
 
     private Integer pinCode;
+
+
 
 
 }
